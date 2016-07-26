@@ -6,17 +6,81 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.majunpeng.jvnengwan.R;
 
 
-public class MyAccountFragment extends Fragment {
+public class MyAccountFragment extends Fragment implements View.OnClickListener {
+
+    private ImageView iv_login_account;
+    private LinearLayout linearLayout_authorTime_Account;
+    private LinearLayout linearLayout_myAttention_Account;
+    private LinearLayout linearLayout_authorOrder_Account;
+    private LinearLayout linearLayout_offLineVideo_account;
+    private LinearLayout linearLayout_myCollection_account;
+    private LinearLayout linearLayout_watchingHistory_account;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_account, container, false);
+        View view = inflater.inflate(R.layout.fragment_my_account, container,
+                false);
+
+        initView(view);
+
+        return view;
     }
 
+    private void initView(View view) {
+
+        iv_login_account = (ImageView) view.findViewById(R.id.iv_login_account);
+        iv_login_account.setOnClickListener(this);
+
+        linearLayout_authorTime_Account = (LinearLayout) view.findViewById(R.id
+                .linearLayout_authorTime_Account);
+        linearLayout_authorTime_Account.setOnClickListener(this);
+
+        linearLayout_myAttention_Account = (LinearLayout) view.findViewById(R.id
+                .linearLayout_myAttention_Account);
+        linearLayout_myAttention_Account.setOnClickListener(this);
+
+        linearLayout_authorOrder_Account = (LinearLayout) view.findViewById(R.id
+                .linearLayout_authorOrder_Account);
+        linearLayout_authorOrder_Account.setOnClickListener(this);
+
+        linearLayout_offLineVideo_account = (LinearLayout) view.findViewById(R.id
+                .linearLayout_offLineVideo_account);
+        linearLayout_offLineVideo_account.setOnClickListener(this);
+
+        linearLayout_myCollection_account = (LinearLayout) view.findViewById(R.id
+                .linearLayout_myCollection_account);
+        linearLayout_myCollection_account.setOnClickListener(this);
+
+        linearLayout_watchingHistory_account = (LinearLayout) view.findViewById(R
+                .id.linearLayout_watchingHistory_account);
+        linearLayout_watchingHistory_account.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.iv_login_account:
+                break;
+            case R.id.linearLayout_authorTime_Account:
+                break;
+            case R.id.linearLayout_myAttention_Account:
+                break;
+            case R.id.linearLayout_authorOrder_Account:
+                break;
+            case R.id.linearLayout_offLineVideo_account:
+                break;
+            case R.id.linearLayout_myCollection_account:
+                break;
+            case R.id.linearLayout_watchingHistory_account:
+                break;
+        }
+
+    }
 }

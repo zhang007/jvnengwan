@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         iv_homePage_mainActivity.setImageResource(R.mipmap
                 .navigation_bar_home_normal);
         iv_category_mainActivity.setImageResource(R.mipmap
-                .navigation_bar_anchorlist_normal);
+                .navigation_bar_gamelist_normal);
         iv_author_mainActivity.setImageResource(R.mipmap
                 .navigation_bar_anchorlist_normal);
         iv_myAccount_mainActivity.setImageResource(R.mipmap

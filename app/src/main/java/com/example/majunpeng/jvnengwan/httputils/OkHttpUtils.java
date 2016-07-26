@@ -1,5 +1,7 @@
 package com.example.majunpeng.jvnengwan.httputils;
 
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import java.io.IOException;
@@ -14,11 +16,21 @@ import okhttp3.Response;
  * Created by ASUS on 2016/7/26.
  */
 public class OkHttpUtils {
+    private String json1;
+Handler mHandler=new Handler(){
+    @Override
+    public void handleMessage(Message msg) {
+        super.handleMessage(msg);
+        if (msg.what==1){
+           json1= (String) msg.obj;
+            Log.e("aaaa",json1+"");
+        }
+    }
+};
+    public String getString(String json){
 
-    public String getString(){
-        String str=null;
         OkHttpClient okHttpClient=new OkHttpClient();
-        Request request=new Request.Builder().url("http://zhibo.sogou.com/gamelivedata?sysVer=4.4.2&pageSize=100&appVer=301&type=json&pageNo=1")
+        Request request=new Request.Builder().url(json)
                 .addHeader("User-Agent", "Apache-HttpClient/UNAVAILABLE (java 1.4)").build();
         //变成一个Call任务
         Call call=okHttpClient.newCall(request);
@@ -32,14 +44,18 @@ public class OkHttpUtils {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response!=null){
-                    Log.e("AAA","==Thread===="+Thread.currentThread().getName());
-                    Log.e("AAA","==请求码=="+response.code());
-                    Log.e("AAA","==请求成功的信息=="+response.message());
-                    Log.e("AAA","==请求成功的字符串=="+response.body().string());
+
+            String  str =response.body().string();
+                    Message message=Message.obtain();
+                    message.what=1;
+                    message.obj=str;
+                    mHandler.sendMessage(message);
+
                 }
             }
         });
-        return str;
+        Log.e("aaaa",json1+"");
+        return json1;
     }
 
 }

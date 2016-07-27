@@ -1,4 +1,4 @@
-package com.example.majunpeng.jvnengwan.model;
+package com.example.majunpeng.jvnengwan.model.impl;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.util.Log;
 
 import com.example.majunpeng.jvnengwan.bean.User;
+import com.example.majunpeng.jvnengwan.model.LoginModel;
+import com.example.majunpeng.jvnengwan.model.listener.OnLoginListener;
 import com.example.majunpeng.jvnengwan.utils.PersonDAO;
 
 import java.util.Date;

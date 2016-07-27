@@ -12,8 +12,8 @@ import android.widget.Toast;
 import com.example.majunpeng.jvnengwan.R;
 import com.example.majunpeng.jvnengwan.bean.User;
 import com.example.majunpeng.jvnengwan.model.LoginModel;
-import com.example.majunpeng.jvnengwan.model.LoginModelImpl;
-import com.example.majunpeng.jvnengwan.model.OnLoginListener;
+import com.example.majunpeng.jvnengwan.model.impl.LoginModelImpl;
+import com.example.majunpeng.jvnengwan.model.listener.OnLoginListener;
 
 public class RegisterActivity extends AppCompatActivity implements View
         .OnClickListener, OnLoginListener {

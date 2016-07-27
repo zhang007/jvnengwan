@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.majunpeng.jvnengwan.R;
+import com.example.majunpeng.jvnengwan.activity.AuthorTimeActivity;
 import com.example.majunpeng.jvnengwan.activity.LoginActivity;
 
 
@@ -69,13 +70,15 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
+        Intent intent = null;
         switch (v.getId()) {
             case R.id.iv_login_account:
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
+                intent = new Intent(getActivity(), LoginActivity.class);
 
                 break;
             case R.id.linearLayout_authorTime_Account:
+                intent = new Intent(getActivity(), AuthorTimeActivity.class);
+
                 break;
             case R.id.linearLayout_myAttention_Account:
                 break;
@@ -89,5 +92,10 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
                 break;
         }
 
+
+        startActivity(intent);
     }
+
+
+
 }

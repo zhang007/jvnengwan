@@ -1,4 +1,4 @@
-package com.example.majunpeng.jvnengwan.model;
+package com.example.majunpeng.jvnengwan.model.listener;
 
 /**
  * Created by zhangfan on 2016/7/27.

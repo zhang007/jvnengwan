@@ -52,7 +52,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="主播时刻"/>
+            android:text="糗事百科视频"/>
 
     </LinearLayout>
 

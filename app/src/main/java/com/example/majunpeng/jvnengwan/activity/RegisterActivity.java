@@ -1,8 +1,6 @@
 package com.example.majunpeng.jvnengwan.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
@@ -26,7 +24,6 @@ public class RegisterActivity extends AppCompatActivity implements View
     private EditText editText_passWord_register;
     private EditText editText_passWordConfirm_Register;
     private Button btn_register;
-    private TextInputLayout textInputLayout;
     private LoginModel loginModel;
 
     @Override
@@ -55,8 +52,6 @@ public class RegisterActivity extends AppCompatActivity implements View
 
         btn_register = (Button) findViewById(R.id.btn_register);
         btn_register.setOnClickListener(this);
-
-        textInputLayout = (TextInputLayout) findViewById(R.id.textInput_register);
     }
 
     @Override
@@ -75,7 +70,6 @@ public class RegisterActivity extends AppCompatActivity implements View
 
     private void submit() {
 
-        textInputLayout.setErrorEnabled(true);
 
         String userName = editText_userName_register.getText().toString().trim();
         String pwd = editText_passWord_register.getText().toString().trim();
@@ -83,15 +77,16 @@ public class RegisterActivity extends AppCompatActivity implements View
                 .trim();
         if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(pwd) || TextUtils
                 .isEmpty(pwdAgain)) {
-            textInputLayout.setError("输入为空");
+            Toast.makeText(this, "空", Toast.LENGTH_LONG).show();
         } else if (!pwd.equals(pwdAgain)) {
-            textInputLayout.setError("输入为空");
+            Toast.makeText(this, "密码不一致", Toast.LENGTH_LONG).show();
+
         } else {
             User user = new User();
             user.setName(userName);
-            user.setRegister(true);
+
             user.setPwd(pwd);
-            loginModel.getLoginState(user, this, this);
+            loginModel.getRegisterState(user, this, this);
         }
 
 
@@ -100,8 +95,7 @@ public class RegisterActivity extends AppCompatActivity implements View
     @Override
     public void loginSuccess() {
         Toast.makeText(this, "注册成功", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        finish();
 
     }
 

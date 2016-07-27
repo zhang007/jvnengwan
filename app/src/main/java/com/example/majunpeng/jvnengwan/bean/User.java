@@ -8,15 +8,6 @@ public class User {
     private String pwd;
     private String loginCode;
     private String loginTime;
-    private boolean isRegister;
-
-    public boolean isRegister() {
-        return isRegister;
-    }
-
-    public void setRegister(boolean register) {
-        isRegister = register;
-    }
 
     public String getLoginCode() {
         return loginCode;

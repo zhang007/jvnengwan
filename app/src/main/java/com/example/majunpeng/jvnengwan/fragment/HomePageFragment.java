@@ -47,7 +47,7 @@ public class HomePageFragment extends Fragment {
 
 
         //下载数据
-        OkhttpDownLoad();
+       // OkhttpDownLoad();
 
         return view;
     }

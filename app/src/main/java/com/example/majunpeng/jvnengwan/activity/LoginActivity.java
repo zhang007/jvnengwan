@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.majunpeng.jvnengwan.R;
 import com.example.majunpeng.jvnengwan.bean.User;
@@ -72,7 +73,7 @@ public class LoginActivity extends AppCompatActivity implements View
 
         iv_loginByQQ = (ImageView) findViewById(R.id.iv_loginByQQ);
         iv_loginByQQ.setOnClickListener(this);
-        textInputLayout = (TextInputLayout) findViewById(R.id.textInputLayout);
+        textInputLayout = (TextInputLayout) findViewById(R.id.textInputLayout_login);
 
     }
 
@@ -130,11 +131,15 @@ public class LoginActivity extends AppCompatActivity implements View
 
     @Override
     public void loginSuccess() {
+        Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
+        finish();
 
     }
 
     @Override
     public void loginFailure(String str) {
+
+        Toast.makeText(this, str, Toast.LENGTH_LONG).show();
 
     }
 }

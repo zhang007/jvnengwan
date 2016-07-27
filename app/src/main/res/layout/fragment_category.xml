@@ -35,16 +35,22 @@
   </RelativeLayout>
 
  </android.support.v7.widget.Toolbar>
-<GridView
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:id="@+id/l_gridView"
-    android:numColumns="3"
-    android:stretchMode="columnWidth"
-    android:verticalSpacing="10dp"
-    android:horizontalSpacing="10dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+ <android.support.v4.widget.SwipeRefreshLayout
+     android:id="@+id/l_swipeLayout"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+  <GridView
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:id="@+id/l_gridView"
+      android:numColumns="3"
+      android:stretchMode="columnWidth"
+      android:verticalSpacing="10dp"
+      android:horizontalSpacing="10dp"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
 
-</GridView>
+  </GridView>
+ </android.support.v4.widget.SwipeRefreshLayout>
+
 </LinearLayout>

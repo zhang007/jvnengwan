@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< Updated upstream
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.majunpeng.jvnengwan">
+=======
+<manifest package="com.example.majunpeng.jvnengwan"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+>>>>>>> Stashed changes
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -22,11 +27,15 @@
         </activity>
         <activity android:name=".activity.MainActivity">
         </activity>
+<<<<<<< Updated upstream
         <activity android:name=".activity.LoginActivity">
         </activity>
         <activity android:name=".activity.RegisterActivity">
         </activity>
         <activity android:name=".activity.AuthorTimeActivity">
+=======
+        <activity android:name=".activity.L_LolActivity">
+>>>>>>> Stashed changes
         </activity>
     </application>
 

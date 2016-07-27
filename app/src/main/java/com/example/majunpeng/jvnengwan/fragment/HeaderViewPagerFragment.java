@@ -3,6 +3,7 @@ package com.example.majunpeng.jvnengwan.fragment;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,8 @@ public class HeaderViewPagerFragment extends Fragment{
         iv_headerView = (ImageView) view.findViewById(R.id
                 .iv_headerViewPagerFragment);
 
-        String imageUrl = getArguments().getString("imageUrl");
+        String imageUrl = getArguments().getString("url");
+        Log.i("CCCCCCCCCCCCCC", imageUrl);
 
         if (imageUrl != null) {
             Picasso.with(getActivity())

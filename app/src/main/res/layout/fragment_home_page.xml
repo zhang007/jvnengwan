@@ -1,18 +1,15 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.majunpeng.jvnengwan.fragment.HomePageFragment">
 
-
-    <com.example.majunpeng.jvnengwan.CustomView.Scroll_ListView
+    <ListView
+        android:id="@+id/homePage_ListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ListView
-            android:id="@+id/homePage_ListView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ListView>
-    </com.example.majunpeng.jvnengwan.CustomView.Scroll_ListView>
 
-</FrameLayout>
+    </ListView>
+
+</LinearLayout>

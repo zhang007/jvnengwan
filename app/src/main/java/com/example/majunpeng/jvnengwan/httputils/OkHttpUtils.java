@@ -2,6 +2,7 @@ package com.example.majunpeng.jvnengwan.httputils;
 
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.example.majunpeng.jvnengwan.interface1.OnLStringClick;
 
@@ -24,6 +25,7 @@ Handler mHandler=new Handler(){
         super.handleMessage(msg);
         if (msg.what==1){
            json1= (String) msg.obj;
+            Log.e("UUUUU",""+json1);
             listener.get(json1);
         }
     }

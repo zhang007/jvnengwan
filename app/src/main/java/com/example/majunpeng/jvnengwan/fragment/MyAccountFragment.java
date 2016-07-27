@@ -1,6 +1,7 @@
 package com.example.majunpeng.jvnengwan.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.majunpeng.jvnengwan.R;
+import com.example.majunpeng.jvnengwan.activity.LoginActivity;
 
 
 public class MyAccountFragment extends Fragment implements View.OnClickListener {
@@ -61,12 +63,17 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
         linearLayout_watchingHistory_account = (LinearLayout) view.findViewById(R
                 .id.linearLayout_watchingHistory_account);
         linearLayout_watchingHistory_account.setOnClickListener(this);
+
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_login_account:
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+
                 break;
             case R.id.linearLayout_authorTime_Account:
                 break;

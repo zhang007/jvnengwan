@@ -1,14 +1,50 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+              android:orientation="vertical"
              tools:context="com.example.majunpeng.jvnengwan.fragment.CategoryFragmen">
 
 
-    <TextView
-        android:background="#cfe252"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+ <android.support.v7.widget.Toolbar
+     android:id="@+id/l_register_toolbar"
+     android:layout_width="match_parent"
+     android:layout_height="70dp"
+     android:background="#eeed5711">
+  <RelativeLayout
+      android:paddingRight="20dp"
+      android:paddingLeft="20dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+   <TextView
+       android:layout_centerInParent="true"
+       android:text="栏目分类"
+       android:textSize="20sp"
+       android:id="@+id/l_category_text"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+   <ImageView
+       android:src="@mipmap/search_icon"
+       android:layout_centerVertical="true"
+       android:layout_alignParentRight="true"
+       android:id="@+id/l_category_search"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
 
-</FrameLayout>
+
+  </RelativeLayout>
+
+ </android.support.v7.widget.Toolbar>
+<GridView
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:id="@+id/l_gridView"
+    android:numColumns="3"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="10dp"
+    android:horizontalSpacing="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</GridView>
+</LinearLayout>

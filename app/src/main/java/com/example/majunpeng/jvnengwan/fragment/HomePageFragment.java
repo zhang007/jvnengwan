@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.example.majunpeng.jvnengwan.R;
 import com.example.majunpeng.jvnengwan.activity.MyApp;
 import com.example.majunpeng.jvnengwan.adapter.ViewPagerAdapter_header;
 import com.example.majunpeng.jvnengwan.bean.HomePageData;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,16 +51,6 @@ public class HomePageFragment extends Fragment {
         data=new ArrayList<>();
         initData();
         initView(view);
-
-
-        //下载数据
-<<<<<<< Updated upstream
-       // OkhttpDownLoad();
-
-=======
-//        OkhttpDownLoad();
->>>>>>> Stashed changes
-
         return view;
     }
 
@@ -142,87 +134,8 @@ public class HomePageFragment extends Fragment {
         dots[0].setSelected(true);
     }
 
-    //下载数据
-<<<<<<< Updated upstream
+
     private void OkhttpDownLoad() {
-//        //okhttpclient下载
-//        OkHttpClient okHttpClient = new OkHttpClient();
-=======
-//    private void OkhttpDownLoad() {
-//        //okhttpclient下载
-//        OkHttpClient okHttpClient=new OkHttpClient();
->>>>>>> Stashed changes
-//        //okhttp:post请求的参数添加方法
-//        RequestBody requestBodyPost = new FormBody.Builder()
-//                .add("account", "18593910685")
-//                .add("token", "2016072520215246457658992033856018593910685")
-//                .build();
-<<<<<<< Updated upstream
-//        Request request = new Request.Builder()
-//                .url(path)
-//                .post(requestBodyPost)
-//                .build();
-//        final Call call = okHttpClient.newCall(request);
-//        //同步执行  要自己开子线程
-//        new Thread() {
-=======
-//        Request request=new Request.Builder()
-//                .url(path)
-//                .post(requestBodyPost)
-//                .build();
-//        final Call call=okHttpClient.newCall(request);
-//        //同步执行  要自己开子线程
-//        new Thread(){
->>>>>>> Stashed changes
-//            @Override
-//            public void run() {
-//                super.run();
-//                try {
-<<<<<<< Updated upstream
-//                    Response response = call.execute();
-//                    String s = response.body().string();
-//                    Log.e("AAA", "==请求成功的字符串===" + s);
-//                    if (response != null) {
-//                        Gson gson = new Gson();
-//                        homePageData = gson.fromJson(s, HomePageData.class);
-//                        content_header = homePageData.getData().getDynamicProjectLists();
-//                        Log.i("AAAAAAAAAA", content_header.size() + "");
-=======
-//                    Response response=call.execute();
-//                    if (response != null) {
-//                        Log.e("AAA","==请求成功的信息==="+response.message());
-//                        Log.e("AAA","==请求成功的字符串==="+response.body().string());
-//
-//                        Gson gson = new Gson();
-//                        homePageData = gson.fromJson(response.body().string(), HomePageData.class);
-//
-//                        getActivity().runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                //要得到里面的图片地址
-//                                content_header=homePageData.getData().getDynamicProjectLists();
-//                            }
-//                        });
-//
-//
-//
->>>>>>> Stashed changes
-//
-//                    }
-//
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }.start();
-<<<<<<< Updated upstream
-
-
-        //=======================================
-        //Volley下载数据
-        // 2.POST请求参数
-
-
         StringRequest stringRequest = new StringRequest(com.android.volley.Request.Method.POST, path,
                 new com.android.volley.Response
                         .Listener<String>() {
@@ -255,10 +168,6 @@ public class HomePageFragment extends Fragment {
         //给请求设置取消标记
         stringRequest.setTag("qx");
         ((MyApp) getActivity().getApplication()).queue.add(stringRequest);
-
-=======
-//    }
->>>>>>> Stashed changes
 
     }
 

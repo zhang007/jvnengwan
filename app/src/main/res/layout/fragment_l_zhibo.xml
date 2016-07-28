@@ -1,13 +1,29 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="10dp"
              tools:context="com.example.majunpeng.jvnengwan.fragment.L_zhibo">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+   <TextView
+       android:layout_marginTop="15dp"
+       android:text="英雄联盟"
+       android:textSize="20sp"
+       android:gravity="center"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+    <GridView
+        android:layout_marginTop="10dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:id="@+id/l_gridView_zhibo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="2b"/>
+        android:layout_height="match_parent">
 
-</FrameLayout>
+    </GridView>
+
+</LinearLayout>

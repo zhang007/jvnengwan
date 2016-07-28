@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
           package="com.example.majunpeng.jvnengwan">
+
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -28,14 +29,12 @@
         </activity>
         <activity android:name=".activity.MainActivity">
         </activity>
-
         <activity android:name=".activity.LoginActivity">
         </activity>
         <activity android:name=".activity.RegisterActivity">
         </activity>
         <activity android:name=".activity.AuthorTimeActivity">
         </activity>
-
         <activity android:name=".activity.L_LolActivity">
         </activity>
         <activity android:name=".activity.WelcomeActivity"></activity>

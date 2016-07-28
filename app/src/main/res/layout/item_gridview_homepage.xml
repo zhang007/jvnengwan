@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.majunpeng.jvnengwan.CustomView.NoScrollGridview
+        android:background="#e9e7ed"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mode1_gridview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnWidth="150dp"
+        android:numColumns="auto_fit"
+        android:horizontalSpacing="2dp"
+        android:verticalSpacing="2dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center">
+    </com.example.majunpeng.jvnengwan.CustomView.NoScrollGridview>
+    <com.example.majunpeng.jvnengwan.CustomView.NoScrollGridview
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/mode2_gridView"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </com.example.majunpeng.jvnengwan.CustomView.NoScrollGridview>
+    <com.example.majunpeng.jvnengwan.CustomView.NoScrollGridview
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/mode3_gridView"
+        android:numColumns="1"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </com.example.majunpeng.jvnengwan.CustomView.NoScrollGridview>
+</LinearLayout>

@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -19,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.majunpeng.jvnengwan.R;
 import com.example.majunpeng.jvnengwan.activity.MyApp;
+import com.example.majunpeng.jvnengwan.adapter.ListViewAdapter_HomePager;
 import com.example.majunpeng.jvnengwan.adapter.ViewPagerAdapter_header;
 import com.example.majunpeng.jvnengwan.bean.HomePageData;
 import com.google.gson.Gson;
@@ -35,7 +35,7 @@ public class HomePageFragment extends Fragment {
     private LinearLayout linearLayout_dot;
     private List<Fragment> fragments;
     private HomePageData homePageData;
-    private List<String>data;
+    private List<HomePageData.DataBean>data;
     private List<HomePageData.DataBean.DynamicProjectListsBean> content_header;
     private String path = "http://appserver.jnwtv.com:8080/jnwtv-client/project/gethomepageinfo";
 
@@ -49,18 +49,15 @@ public class HomePageFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_page, container, false);
         data=new ArrayList<>();
-        initData();
         initView(view);
+
+
+        //下载数据
+        OkhttpDownLoad();
+
+
         return view;
     }
-
-    private void initData() {
-        for (int i = 0; i < 20; i++) {
-            String s="我是数据"+i;
-            data.add(s);
-        }
-    }
-
 
     private void initView(View view) {
         mListView = (ListView) view.findViewById(R.id.homePage_ListView);
@@ -88,8 +85,8 @@ public class HomePageFragment extends Fragment {
         viewPager_header.setAdapter(adapter_header);
         mListView.addHeaderView(headerView);
 
-        ArrayAdapter adpter=new ArrayAdapter(getActivity(), android.support.v7.appcompat.R.layout.select_dialog_item_material,data);
-        mListView.setAdapter(adpter);
+        ListViewAdapter_HomePager adapter=new ListViewAdapter_HomePager(getActivity(),data);
+        mListView.setAdapter(adapter);
         //initDot初始化小点
 //        initDot();
     }
@@ -134,11 +131,13 @@ public class HomePageFragment extends Fragment {
         dots[0].setSelected(true);
     }
 
-
-
-
-
+    //下载数据
     private void OkhttpDownLoad() {
+        //=======================================
+        //Volley下载数据
+        // 2.POST请求参数
+
+
         StringRequest stringRequest = new StringRequest(com.android.volley.Request.Method.POST, path,
                 new com.android.volley.Response
                         .Listener<String>() {
@@ -146,7 +145,7 @@ public class HomePageFragment extends Fragment {
                     public void onResponse(String response) {
                         Gson gson = new Gson();
                         homePageData = gson.fromJson(response, HomePageData.class);
-
+                        data.add(homePageData.getData());
                         Log.i("AAAAAAAAAA", response);
                         content_header = homePageData.getData().getDynamicProjectLists();
                         Log.i("AAAAAAAAAA", content_header.size() + "");
@@ -171,6 +170,7 @@ public class HomePageFragment extends Fragment {
         //给请求设置取消标记
         stringRequest.setTag("qx");
         ((MyApp) getActivity().getApplication()).queue.add(stringRequest);
+
 
     }
 

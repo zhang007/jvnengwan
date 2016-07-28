@@ -1,14 +1,48 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+              android:orientation="vertical"
              tools:context="com.example.majunpeng.jvnengwan.fragment.L_shiPin">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+   <RelativeLayout
+       android:id="@+id/l_relative_jieShuo"
+       android:padding="10dp"
+       android:gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="70dp">
+       <ImageView
+           android:src="@drawable/icon_all_commentators"
+           android:id="@+id/l_image_jieshuo"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="sb"/>
+       <TextView
+           android:paddingLeft="10dp"
+           android:layout_toRightOf="@id/l_image_jieshuo"
+           android:textColor="#ec8a51"
+           android:textSize="20sp"
+           android:text="全部解说"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+       <ImageView
+           android:paddingRight="10dp"
+           android:src="@drawable/enter_more_orange"
+           android:layout_alignParentRight="true"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+   </RelativeLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/l_swipeViewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ListView
+            android:id="@+id/l_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</FrameLayout>
+        </ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

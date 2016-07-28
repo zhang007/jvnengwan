@@ -14,9 +14,10 @@ public class LoadImageModelImpl implements LoadImageModel {
     @Override
     public void loadImage(String uri, Context context, ImageView imageView) {
 
-
-        Picasso.with(context).load(uri).config(Bitmap.Config.RGB_565).into
-                (imageView);
+        Picasso.with(context)
+                .load(uri)
+                .config(Bitmap.Config.RGB_565)
+                .into(imageView);
 
     }
 }

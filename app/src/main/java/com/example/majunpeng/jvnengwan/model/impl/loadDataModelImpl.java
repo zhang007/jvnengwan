@@ -4,12 +4,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.majunpeng.jvnengwan.activity.MyApp;
-import com.example.majunpeng.jvnengwan.bean.QSBaiKeBean;
 import com.example.majunpeng.jvnengwan.model.LoadDataModel;
 import com.example.majunpeng.jvnengwan.model.listener.OnLoadDataListener;
-import com.google.gson.Gson;
-
-import java.util.List;
 
 /**
  * Created by zhangfan on 2016/7/27.
@@ -17,6 +13,8 @@ import java.util.List;
 public class LoadDataModelImpl implements LoadDataModel, Response.ErrorListener,
         Response.Listener<String> {
     private OnLoadDataListener listener;
+
+    private Object bean;
 
     @Override
     public void getData(String url, OnLoadDataListener listener) {
@@ -34,17 +32,14 @@ public class LoadDataModelImpl implements LoadDataModel, Response.ErrorListener,
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        listener.getDataForGson(false, error);
+        listener.getDataForGson(false, error.toString());
 
     }
 
     @Override
     public void onResponse(String response) {
-        Gson gson = new Gson();
-        List<QSBaiKeBean.ItemsBean> itemsBeen = gson.fromJson(response, QSBaiKeBean
-                .class).getItems();
-        listener.getDataForGson(true, itemsBeen);
 
+        listener.getDataForGson(true, response);
         MyApp.queue.cancelAll("cancel");
 
 

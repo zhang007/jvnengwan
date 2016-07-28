@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import com.example.majunpeng.jvnengwan.R;
 import com.example.majunpeng.jvnengwan.activity.AuthorTimeActivity;
 import com.example.majunpeng.jvnengwan.activity.LoginActivity;
+import com.example.majunpeng.jvnengwan.activity.MyLiveActivity;
 
 
 public class MyAccountFragment extends Fragment implements View.OnClickListener {
@@ -81,6 +82,8 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
 
                 break;
             case R.id.linearLayout_myAttention_Account:
+                intent = new Intent(getActivity(),MyLiveActivity.class);
+
                 break;
             case R.id.linearLayout_authorOrder_Account:
                 break;

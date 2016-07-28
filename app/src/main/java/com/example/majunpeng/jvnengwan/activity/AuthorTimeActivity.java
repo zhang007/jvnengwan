@@ -12,6 +12,7 @@ import com.example.majunpeng.jvnengwan.model.LoadDataModel;
 import com.example.majunpeng.jvnengwan.model.impl.LoadDataModelImpl;
 import com.example.majunpeng.jvnengwan.model.listener.OnLoadDataListener;
 import com.example.majunpeng.jvnengwan.url.LoadUrl;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,13 +45,14 @@ public class AuthorTimeActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void getDataForGson(boolean isSuccess, Object data) {
+    public void getDataForGson(boolean isSuccess, String response) {
         if (isSuccess) {
-            List<QSBaiKeBean.ItemsBean> beanList = (List<QSBaiKeBean.ItemsBean>)
-                    data;
+            Gson gson = new Gson();
+            List<QSBaiKeBean.ItemsBean> itemsBeen = gson.fromJson(response,
+                    QSBaiKeBean.class).getItems();
 
-            this.data.addAll(beanList);
-            adapter.addData(beanList);
+            this.data.addAll(itemsBeen);
+            adapter.addData(itemsBeen);
 
 
         } else {

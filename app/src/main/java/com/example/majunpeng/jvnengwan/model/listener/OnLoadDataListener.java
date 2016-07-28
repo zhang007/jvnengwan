@@ -5,6 +5,6 @@ package com.example.majunpeng.jvnengwan.model.listener;
  */
 public interface OnLoadDataListener {
 
-    void getDataForGson(boolean isSuccess, Object data);
+    void getDataForGson(boolean isSuccess, String response);
 
 }
